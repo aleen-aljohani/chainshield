@@ -26,6 +26,17 @@ drafts), a portal "answer pack", and screening-question answers — so that once
 
 ---
 
+## UPDATE — 40 company drafts created from your NCA-list file
+You provided a "Full List of Registered Cybersecurity Companies in Saudi Arabia (NCA)" and asked for a
+separate email per company. I created **40 Gmail drafts**, each addressed to a company's real contact email
+**taken from your file** (never invented), personalized with the company name, using your approved text.
+Full list: `drafts_created.csv`. Sending instructions: `gmail_drafts/HOW_TO_SEND.md`.
+
+- I selected the ~40 most relevant (cybersecurity-focused firms + major IT/telecom employers) with a clearly
+  readable email in the file — you chose the "focused ~40" scope.
+- **Not sent**, and **no send capability exists in this session** — drafts only. You attach the CV (one click) and send.
+- The tool can't auto-attach the CV reliably (see HOW_TO_SEND.md), so that stays a manual one-click step.
+
 ## What was delivered
 - **3 Gmail drafts** created in the connected account (`fx.py2005@gmail.com`), one per role family (SOC, GRC, IAM/Security Engineer). Addressed to your own email as a placeholder — **change the To address to the company's recruitment email and attach the CV before sending.** See `gmail_drafts/`.
 - **Portal answer pack** (`portal_applications/portal_answer_pack.md`) — every standard application field pre-filled from your CV, ready to copy-paste.

@@ -17,7 +17,8 @@ TRUST_PROXY is set) as the identity. Blocked requests receive HTTP 429.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Callable, Optional
+from collections.abc import Callable
+from typing import TYPE_CHECKING
 
 from chainshield.core.guardian import Guardian
 
@@ -50,15 +51,15 @@ class FlaskChainShield:
 
     def __init__(
         self,
-        app: "Flask",
-        guardian: Optional[Guardian] = None,
-        identity_func: Optional[Callable] = None,
+        app: Flask,
+        guardian: Guardian | None = None,
+        identity_func: Callable | None = None,
     ) -> None:
         self.guardian = guardian or Guardian()
         self._identity_func = identity_func or _get_client_ip
         self._init_app(app)
 
-    def _init_app(self, app: "Flask") -> None:
+    def _init_app(self, app: Flask) -> None:
         from flask import jsonify, request
 
         @app.before_request

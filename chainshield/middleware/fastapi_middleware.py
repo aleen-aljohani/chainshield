@@ -15,7 +15,6 @@ Usage
 from __future__ import annotations
 
 import time
-from typing import Optional
 
 from chainshield.core.guardian import Guardian
 
@@ -37,7 +36,7 @@ class FastAPIChainShield:
     Retry-After header.
     """
 
-    def __init__(self, app, guardian: Optional[Guardian] = None) -> None:
+    def __init__(self, app, guardian: Guardian | None = None) -> None:
         self.app = app
         self.guardian = guardian or Guardian()
 

@@ -14,7 +14,6 @@ enhanced contract.
 """
 
 import time
-from typing import Optional
 
 from chainshield.models import GlobalState
 from chainshield.storage.base import BaseStorage
@@ -47,7 +46,7 @@ class GlobalLimiter:
         self.global_max_requests = global_max_requests
         self.window_size = window_size
 
-    def check(self, now: Optional[float] = None) -> tuple[bool, GlobalState]:
+    def check(self, now: float | None = None) -> tuple[bool, GlobalState]:
         """
         Evaluate whether global capacity allows another request.
 

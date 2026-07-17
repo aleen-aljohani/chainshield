@@ -41,6 +41,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Automatically create/enable the Pages site so no manual settings change
+      # is required for the first deployment.
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Build static site
         env:
           # Project pages are served from /<repo>/, so set the base path.

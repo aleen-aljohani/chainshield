@@ -1,0 +1,67 @@
+name: Deploy Teacher Pro to GitHub Pages
+
+# Publishes the static export of zahra-english-teacher-pro/ to GitHub Pages.
+# After the first successful run, the site is available at:
+#   https://<owner>.github.io/chainshield/
+
+on:
+  push:
+    branches:
+      - claude/zahra-english-teacher-pro-6mgdbx
+    paths:
+      - "zahra-english-teacher-pro/**"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: zahra-english-teacher-pro
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: zahra-english-teacher-pro/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        env:
+          # Project pages are served from /<repo>/, so set the base path.
+          PAGES_BASE_PATH: /chainshield
+        run: npm run build
+
+      - name: Disable Jekyll (serve _next assets)
+        run: touch out/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: zahra-english-teacher-pro/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

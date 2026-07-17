@@ -58,6 +58,32 @@ npm run test         # run unit tests (Vitest)
 Open **http://localhost:3000**. There is **no login** — the app opens straight
 to the dashboard.
 
+## 🌐 Live website (GitHub Pages)
+
+The app is a fully static, client-side site, so it can be hosted publicly for
+free. A GitHub Actions workflow ([`.github/workflows/deploy-pages.yml`](../.github/workflows/deploy-pages.yml))
+builds the static export and deploys it automatically on every push to the
+`claude/zahra-english-teacher-pro-6mgdbx` branch.
+
+**One-time setup (repository owner):**
+1. On GitHub, open **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Push to the branch (or run the *Deploy Teacher Pro to GitHub Pages* workflow
+   manually from the **Actions** tab).
+
+After the workflow finishes, the site is live at:
+
+```
+https://<owner>.github.io/chainshield/
+```
+
+For this repository that is **https://aleen-aljohani.github.io/chainshield/**.
+
+> The project is served from the `/chainshield/` sub-path; the build sets the
+> base path automatically via the `PAGES_BASE_PATH` env var, so `npm run dev`
+> keeps working at the root locally. Each visitor's data is stored in *their own*
+> browser — the public site ships with the sample data only.
+
 ## 💾 How local data works
 
 All teacher-created data (profile, classes, students, attendance, grades,

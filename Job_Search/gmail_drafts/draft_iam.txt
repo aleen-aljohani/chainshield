@@ -1,0 +1,17 @@
+Subject: Application – IAM Analyst / Junior Security Engineer (Entry-Level) | Aleen Aljohani
+
+Dear [COMPANY] Recruitment Team,
+
+I am writing to apply for the [POSITION] role in Jeddah. I am a cybersecurity graduate from the University of Jeddah, currently pursuing an Executive Master's in Cybersecurity at King Abdulaziz University, with hands-on exposure to identity and access management and security engineering fundamentals.
+
+Highlights relevant to an IAM / Junior Security Engineer role:
+- IAM experience including account provisioning/de-provisioning, creating official employee email accounts, MFA/2FA implementation (produced a FortiToken 2FA user guide), least-privilege and PAM concepts during cooperative training at the National Center for Meteorology.
+- Network and endpoint security fundamentals, IDS/IPS (Snort), firewall-management overview, plus vulnerability assessment with Nmap, Burp Suite, Metasploit, and Kali Linux.
+- Certifications: CompTIA Security+, CEH, eJPT, eCPPT, eCIR; CompTIA CySA+ scheduled.
+
+I am based in Saudi Arabia and available in Jeddah. My CV is attached. I would welcome the chance to contribute to your team.
+
+Kind regards,
+Aleen Saleh Aljohani
++966 55 816 4792 | aleensaljohani@gmail.com
+linkedin.com/in/aleen-aljohani | github.com/aleen-aljohani

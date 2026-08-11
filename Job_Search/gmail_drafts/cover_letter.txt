@@ -1,0 +1,32 @@
+Dear [COMPANY] Recruitment Team,
+
+I am writing to express my interest in the [POSITION] opportunity in Jeddah. I am a cybersecurity
+graduate from the University of Jeddah, currently pursuing an Executive Master's in Cybersecurity at
+King Abdulaziz University, seeking an entry-level permanent role in security operations, GRC, IAM, or
+cyber risk.
+
+My background combines hands-on technical work with strong compliance grounding:
+
+- Security operations: SIEM monitoring, log analysis, event correlation, alert triage and incident
+  analysis using the ELK Stack (Elasticsearch, Logstash, Kibana) and Snort IDS. In my graduation
+  project, SmartHoneyNet, I built a honeypot + IDS + ELK platform that detected and classified six
+  attack categories and mapped every alert to MITRE ATT&CK, achieving 100% precision and recall on a
+  controlled evaluation set validated by 39 automated tests.
+
+- Governance, risk & compliance: practical experience with NCA ECC (all domains), SAMA CSF, ISO 27001
+  and NIST, including policy review, risk assessment, security-standard alignment and security-awareness
+  program design during cooperative training at the National Center for Meteorology.
+
+- Identity & access management: account provisioning/de-provisioning, MFA/2FA (FortiToken), and
+  least-privilege/PAM concepts.
+
+I hold CompTIA Security+, CEH, eJPT, eCPPT and eCIR certifications, with CompTIA CySA+ scheduled. I am
+based in Saudi Arabia and available to work in Jeddah immediately.
+
+My CV is attached. Thank you for your consideration — I would welcome the opportunity to discuss how I
+can contribute to your team.
+
+Kind regards,
+Aleen Saleh Aljohani
++966 55 816 4792 | aleensaljohani@gmail.com
+linkedin.com/in/aleen-aljohani | github.com/aleen-aljohani

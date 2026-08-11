@@ -5,7 +5,6 @@ Implement this to add Redis, Memcached, or any other backend.
 """
 
 from abc import ABC, abstractmethod
-from typing import Optional
 
 from chainshield.models import GlobalState, IdentityState
 
@@ -14,7 +13,7 @@ class BaseStorage(ABC):
     """Protocol all storage backends must satisfy."""
 
     @abstractmethod
-    def get_identity(self, identity: str) -> Optional[IdentityState]:
+    def get_identity(self, identity: str) -> IdentityState | None:
         """Return current state for an identity, or None if unknown."""
 
     @abstractmethod

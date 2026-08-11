@@ -22,7 +22,6 @@ Space complexity: O(n) where n = number of distinct identities seen
 """
 
 import time
-from typing import Optional
 
 from chainshield.models import IdentityState
 from chainshield.storage.base import BaseStorage
@@ -57,7 +56,7 @@ class SlidingWindowRateLimiter:
         self.max_requests = max_requests
         self.window_size = window_size
 
-    def check(self, identity: str, now: Optional[float] = None) -> tuple[bool, IdentityState]:
+    def check(self, identity: str, now: float | None = None) -> tuple[bool, IdentityState]:
         """
         Evaluate whether the identity may proceed.
 
@@ -86,12 +85,12 @@ class SlidingWindowRateLimiter:
         allowed = state.request_count < self.max_requests
         return allowed, state
 
-    def record_accepted(self, state: IdentityState, now: Optional[float] = None) -> None:
+    def record_accepted(self, state: IdentityState, now: float | None = None) -> None:
         """Increment the request counter and persist state."""
         state.request_count += 1
         self.storage.set_identity(state)
 
-    def remaining(self, identity: str, now: Optional[float] = None) -> int:
+    def remaining(self, identity: str, now: float | None = None) -> int:
         """Return how many requests the identity still has available in this window."""
         _, state = self.check(identity, now)
         return max(0, self.max_requests - state.request_count)

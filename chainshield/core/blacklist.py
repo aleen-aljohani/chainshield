@@ -18,7 +18,6 @@ next request — no admin action required.
 """
 
 import time
-from typing import Optional
 
 from chainshield.models import IdentityState
 from chainshield.storage.base import BaseStorage
@@ -42,7 +41,7 @@ class TemporaryBlacklist:
         self.storage = storage
         self.blacklist_duration = blacklist_duration
 
-    def is_blocked(self, identity: str, now: Optional[float] = None) -> tuple[bool, Optional[float]]:
+    def is_blocked(self, identity: str, now: float | None = None) -> tuple[bool, float | None]:
         """
         Check whether an identity is currently blacklisted.
 
@@ -60,7 +59,7 @@ class TemporaryBlacklist:
             return True, state.blacklisted_until
         return False, None
 
-    def add(self, state: IdentityState, now: Optional[float] = None) -> float:
+    def add(self, state: IdentityState, now: float | None = None) -> float:
         """
         Blacklist an identity for `blacklist_duration` seconds.
 
@@ -71,7 +70,7 @@ class TemporaryBlacklist:
         self.storage.set_identity(state)
         return state.blacklisted_until
 
-    def clear(self, identity: str, now: Optional[float] = None) -> bool:
+    def clear(self, identity: str, now: float | None = None) -> bool:
         """
         Manually lift the blacklist for an identity.
 
@@ -85,7 +84,7 @@ class TemporaryBlacklist:
         self.storage.set_identity(state)
         return True
 
-    def expire_check(self, state: IdentityState, now: Optional[float] = None) -> bool:
+    def expire_check(self, state: IdentityState, now: float | None = None) -> bool:
         """
         If a prior blacklist has expired, reset the state and return True.
         Called automatically by Guardian on every request.

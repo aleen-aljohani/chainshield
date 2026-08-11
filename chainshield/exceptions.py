@@ -23,9 +23,7 @@ class RateLimitExceededError(ChainShieldError):
         self.identity = identity
         self.limit = limit
         self.window = window
-        super().__init__(
-            f"Identity '{identity}' exceeded {limit} requests per {window}s window"
-        )
+        super().__init__(f"Identity '{identity}' exceeded {limit} requests per {window}s window")
 
 
 class GlobalLimitExceededError(ChainShieldError):

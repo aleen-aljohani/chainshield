@@ -6,8 +6,6 @@ deployments, use a shared backend like Redis.
 """
 
 import threading
-import time
-from typing import Optional
 
 from chainshield.models import GlobalState, IdentityState
 from chainshield.storage.base import BaseStorage
@@ -25,7 +23,7 @@ class MemoryStorage(BaseStorage):
         self._global = GlobalState()
         self._lock = threading.Lock()
 
-    def get_identity(self, identity: str) -> Optional[IdentityState]:
+    def get_identity(self, identity: str) -> IdentityState | None:
         with self._lock:
             return self._identities.get(identity)
 

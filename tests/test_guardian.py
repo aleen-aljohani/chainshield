@@ -28,6 +28,7 @@ def guardian(config):
 
 # ── Scenario: Normal traffic ───────────────────────────────────────────────
 
+
 class TestNormalTraffic:
     def test_five_requests_all_accepted(self, guardian):
         """B3 / E3 equivalent: first 5 requests must be accepted."""
@@ -46,6 +47,7 @@ class TestNormalTraffic:
 
 
 # ── Scenario: Rate limit blocking ─────────────────────────────────────────
+
 
 class TestRateLimitBlocking:
     def test_sixth_request_blocked(self, guardian):
@@ -79,6 +81,7 @@ class TestRateLimitBlocking:
 
 
 # ── Scenario: Temporary blacklist ─────────────────────────────────────────
+
 
 class TestTemporaryBlacklist:
     def test_blacklisted_user_is_blocked(self, guardian):
@@ -122,6 +125,7 @@ class TestTemporaryBlacklist:
 
 # ── Scenario: Independent accounts ────────────────────────────────────────
 
+
 class TestIndependentAccounts:
     def test_accounts_tracked_independently(self, guardian):
         """B6 / E6: Blocking user-A must not affect user-B."""
@@ -148,6 +152,7 @@ class TestIndependentAccounts:
 
 
 # ── Scenario: Global limit ────────────────────────────────────────────────
+
 
 class TestGlobalLimit:
     def test_global_limit_triggers_correctly(self, guardian):
@@ -176,6 +181,7 @@ class TestGlobalLimit:
 
 # ── Scenario: Window reset ────────────────────────────────────────────────
 
+
 class TestWindowReset:
     def test_counter_resets_after_window(self, guardian):
         now = 1000.0
@@ -196,6 +202,7 @@ class TestWindowReset:
 
 
 # ── Scenario: Edge cases ──────────────────────────────────────────────────
+
 
 class TestEdgeCases:
     def test_empty_identity_string(self, guardian):
@@ -239,6 +246,7 @@ class TestEdgeCases:
 
 
 # ── Scenario: Decision metadata ───────────────────────────────────────────
+
 
 class TestDecisionMetadata:
     def test_allowed_decision_has_no_block_reason(self, guardian):

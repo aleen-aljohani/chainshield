@@ -7,7 +7,6 @@ from __future__ import annotations
 import time
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Optional
 
 
 class BlockReason(str, Enum):
@@ -23,10 +22,10 @@ class Decision:
     allowed: bool
     identity: str
     timestamp: float = field(default_factory=time.time)
-    block_reason: Optional[BlockReason] = None
+    block_reason: BlockReason | None = None
     requests_in_window: int = 0
     global_requests: int = 0
-    blacklist_expires_at: Optional[float] = None
+    blacklist_expires_at: float | None = None
 
     @property
     def is_blacklisted(self) -> bool:
@@ -53,17 +52,17 @@ class IdentityState:
     window_start: float = field(default_factory=time.time)
     blacklisted_until: float = 0.0
 
-    def is_blacklisted(self, now: Optional[float] = None) -> bool:
+    def is_blacklisted(self, now: float | None = None) -> bool:
         return self.blacklisted_until > (now or time.time())
 
-    def is_window_expired(self, window_size: int, now: Optional[float] = None) -> bool:
+    def is_window_expired(self, window_size: int, now: float | None = None) -> bool:
         return (now or time.time()) > self.window_start + window_size
 
-    def reset_window(self, now: Optional[float] = None) -> None:
+    def reset_window(self, now: float | None = None) -> None:
         self.window_start = now or time.time()
         self.request_count = 0
 
-    def clear_blacklist(self, now: Optional[float] = None) -> None:
+    def clear_blacklist(self, now: float | None = None) -> None:
         self.blacklisted_until = 0.0
         self.reset_window(now)
 
@@ -75,10 +74,10 @@ class GlobalState:
     request_count: int = 0
     window_start: float = 0.0  # 0 = uninitialized; reset on first check
 
-    def is_window_expired(self, window_size: int, now: Optional[float] = None) -> bool:
+    def is_window_expired(self, window_size: int, now: float | None = None) -> bool:
         return (now or time.time()) > self.window_start + window_size
 
-    def reset_window(self, now: Optional[float] = None) -> None:
+    def reset_window(self, now: float | None = None) -> None:
         self.window_start = now or time.time()
         self.request_count = 0
 

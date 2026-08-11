@@ -5,7 +5,6 @@ Tests for SlidingWindowRateLimiter.
 import pytest
 
 from chainshield.core.rate_limiter import SlidingWindowRateLimiter
-from chainshield.models import IdentityState
 from chainshield.storage.memory import MemoryStorage
 
 

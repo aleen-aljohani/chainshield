@@ -30,8 +30,7 @@ Request flow
 """
 
 import time
-from dataclasses import dataclass, field
-from typing import Optional
+from dataclasses import dataclass
 
 from chainshield.core.blacklist import TemporaryBlacklist
 from chainshield.core.global_limit import GlobalLimiter
@@ -86,8 +85,8 @@ class Guardian:
 
     def __init__(
         self,
-        config: Optional[GuardianConfig] = None,
-        storage: Optional[BaseStorage] = None,
+        config: GuardianConfig | None = None,
+        storage: BaseStorage | None = None,
     ) -> None:
         self.config = config or GuardianConfig()
         self.storage = storage or MemoryStorage()
@@ -118,7 +117,7 @@ class Guardian:
     # Public API
     # ------------------------------------------------------------------
 
-    def check(self, identity: str, now: Optional[float] = None) -> Decision:
+    def check(self, identity: str, now: float | None = None) -> Decision:
         """
         Evaluate a single request from `identity`.
 

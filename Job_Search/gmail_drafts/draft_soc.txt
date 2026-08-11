@@ -1,0 +1,17 @@
+Subject: Application – SOC / Security Operations Analyst (Entry-Level) | Aleen Aljohani
+
+Dear [COMPANY] Recruitment Team,
+
+I am writing to apply for the [POSITION] role in Jeddah. I am a cybersecurity graduate from the University of Jeddah (currently pursuing an Executive Master's in Cybersecurity at King Abdulaziz University) with hands-on experience in security operations and a strong certification base.
+
+Highlights relevant to a SOC role:
+- SIEM monitoring, log analysis, event correlation, alert triage and incident analysis, built on the ELK Stack (Elasticsearch, Logstash, Kibana), Snort IDS, and honeypot telemetry.
+- Graduation project "SmartHoneyNet": detected and classified six attack categories (brute-force, default-credential abuse, DoS, port scanning, web exploitation, command injection) and mapped every alert to MITRE ATT&CK, achieving 100% precision/recall on a controlled evaluation set validated by 39 automated tests.
+- Certifications: CompTIA Security+, CEH, eJPT, eCPPT, and eCIR (Incident Response); CompTIA CySA+ exam scheduled.
+
+I am based in Saudi Arabia and available to work in Jeddah. My CV is attached. I would welcome the opportunity to discuss how I can contribute to your Security Operations Center.
+
+Kind regards,
+Aleen Saleh Aljohani
++966 55 816 4792 | aleensaljohani@gmail.com
+linkedin.com/in/aleen-aljohani | github.com/aleen-aljohani

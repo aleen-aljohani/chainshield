@@ -29,6 +29,11 @@
   .skill { margin: 1px 0; }
   .skill b { color: #111; }
   .summary { margin: 1.5px 0; text-align: justify; }
+  .certrow { display: flex; justify-content: space-between; align-items: baseline; margin: 1px 0; padding-left: 15px; position: relative; }
+  .certrow::before { content: "•"; position: absolute; left: 2px; }
+  .certrow .date { color: #555; white-space: nowrap; padding-left: 12px; }
+  .headrow { display: flex; justify-content: space-between; align-items: baseline; }
+  .headrow .date { color: #555; white-space: nowrap; padding-left: 12px; }
 </style>
 </head>
 <body>
@@ -53,18 +58,16 @@
   <p class="skill"><b>Operating Systems:</b> Windows, Linux.</p>
 
   <h2>Certifications</h2>
-  <ul>
-    <li>CompTIA Security+ (SY0-701) — Oct 2025</li>
-    <li>CompTIA CySA+ (CS0-003) — Jul 2026</li>
-    <li>CompTIA Security Analytics Professional (CSAP) — Jul 2026</li>
-    <li>CEH – Certified Ethical Hacker, EC-Council — Aug 2025</li>
-    <li>eJPT – Junior Penetration Tester, INE — Jun 2025</li>
-    <li>eCPPT – Professional Penetration Tester, INE — Aug 2025</li>
-    <li>eCIR – Certified Incident Responder, INE — Aug 2025</li>
-  </ul>
+  <div class="certrow"><span>CompTIA Security+ (SY0-701)</span><span class="date">Oct 2025</span></div>
+  <div class="certrow"><span>CompTIA CySA+ (CS0-003)</span><span class="date">Jul 2026</span></div>
+  <div class="certrow"><span>CompTIA Security Analytics Professional (CSAP)</span><span class="date">Jul 2026</span></div>
+  <div class="certrow"><span>CEH – Certified Ethical Hacker, EC-Council</span><span class="date">Aug 2025</span></div>
+  <div class="certrow"><span>eJPT – Junior Penetration Tester, INE</span><span class="date">Jun 2025</span></div>
+  <div class="certrow"><span>eCPPT – Professional Penetration Tester, INE</span><span class="date">Aug 2025</span></div>
+  <div class="certrow"><span>eCIR – Certified Incident Responder, INE</span><span class="date">Aug 2025</span></div>
 
   <h2>Training Experience</h2>
-  <p class="role"><b>National Center for Meteorology (NCM)</b> | Cybersecurity Intern (Cooperative Training) | Jan – Mar 2024</p>
+  <p class="role headrow"><span><b>National Center for Meteorology (NCM)</b> | Cybersecurity Intern (Cooperative Training)</span><span class="date">Jan – Mar 2024</span></p>
   <ul>
     <li>Supported firewall management and daily security monitoring for SOC operations.</li>
     <li>Provisioned and de-provisioned employee accounts and supported the IAM identity lifecycle.</li>
@@ -82,8 +85,8 @@
   </ul>
 
   <h2>Education</h2>
-  <p><b>Executive Master's in Cybersecurity (In Progress)</b> | King Abdulaziz University | Expected: May 2027</p>
-  <p><b>Bachelor's in Cybersecurity</b> | University of Jeddah | Sep 2020 – May 2024</p>
+  <p class="headrow"><span><b>Executive Master's in Cybersecurity (In Progress)</b> | King Abdulaziz University</span><span class="date">Expected: May 2027</span></p>
+  <p class="headrow"><span><b>Bachelor's in Cybersecurity</b> | University of Jeddah</span><span class="date">Sep 2020 – May 2024</span></p>
 
   <h2>Professional Development</h2>
   <p><b>IBM Cybersecurity Learning Path:</b> Cybersecurity Fundamentals, Governance/Risk/Compliance &amp; Data Privacy, Vulnerability Management, System &amp; Network Security, Cloud Security, Security Operations &amp; Management, Incident Response &amp; Systems Forensics.</p>
